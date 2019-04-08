@@ -1,5 +1,5 @@
-# qtum-ipfs
-A demo for sharing files via Qtum and IPFS.
+# htmlcoin-ipfs
+A demo for sharing files via Htmlcoin and IPFS.
 
 # How it works
 ![image](doc/image/1.png)
@@ -8,8 +8,8 @@ A demo for sharing files via Qtum and IPFS.
 ## Prerequirements
 1. Get the source code and install dependencies.
 ```
-$ git clone https://github.com/qtumproject/qtum-ipfs.git
-$ cd qtum-ipfs
+$ git clone https://github.com/denuoweb/htmlcoin-ipfs.git
+$ cd htmlcoin-ipfs
 $ npm install
 ```
 
@@ -29,17 +29,17 @@ $ ipfs config --json API.HTTPHeaders.Access-Control-Allow-Credentials "[\"true\"
 ipfsApi = ipfsAPI('localhost', '5001', {protocol: 'http'})
 ```
 
-5. Start a Qtum node and a [CORS proxy](https://github.com/bitcoin/bitcoin/pull/12040).
+5. Start a Htmlcoin node and a [CORS proxy](https://github.com/bitcoin/bitcoin/pull/12040).
 ```
-// start a Qtum QT node on Mac with RPC parameters specified
-$ /Applications/Qtum-Qt.app/Contents/MacOS/Qtum-Qt -testnet -server -rpcuser=atx -rpcpassword=atx -rpcport=13889
+// start a Htmlcoin QT node on Mac with RPC parameters specified
+$ /Applications/Htmlcoin-Qt.app/Contents/MacOS/Htmlcoin-Qt -testnet -server -rpcuser=atx -rpcpassword=atx -rpcport=13889
 
 // start a CORS proxy
 $ npm install -g local-cors-proxy
 $ lcp --proxyUrl http://localhost:13889  --proxyPartial "" --port 8010
 
 // configuration in file src/App.js
-contract = (new Qtum('http://atx:atx@127.0.0.1:8010', repo)).contract('IpfsRecord.sol')
+contract = (new Htmlcoin('http://atx:atx@127.0.0.1:8010', repo)).contract('IpfsRecord.sol')
 ```
 
 ## Deployment
