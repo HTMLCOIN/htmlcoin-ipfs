@@ -14,7 +14,7 @@ $ npm install
 ```
 
 2. Install the [Solidity compiler](https://solidity.readthedocs.io/en/latest/installing-solidity.html#building-from-source). You'd better install it from a binary package or the source code.
-3. Install [Solar](https://github.com/qtumproject/solar). Solar is a smart contract deployment tool of Qtum.
+3. Install [Solar](https://github.com/htmlcoin/solar). Solar is a smart contract deployment tool of Htmlcoin.
 
 4. Start a local IPFS node or use a public one.
 ```
@@ -32,7 +32,7 @@ ipfsApi = ipfsAPI('localhost', '5001', {protocol: 'http'})
 5. Start a Htmlcoin node and a [CORS proxy](https://github.com/bitcoin/bitcoin/pull/12040).
 ```
 // start a Htmlcoin QT node on Mac with RPC parameters specified
-$ /Applications/Htmlcoin-Qt.app/Contents/MacOS/Htmlcoin-Qt -testnet -server -rpcuser=atx -rpcpassword=atx -rpcport=13889
+$ /Applications/Htmlcoin-Qt.app/Contents/MacOS/Htmlcoin-Qt -server -rpcuser=atx -rpcpassword=atx -rpcport=4889
 
 // start a CORS proxy
 $ npm install -g local-cors-proxy
@@ -47,7 +47,7 @@ contract = (new Htmlcoin('http://atx:atx@127.0.0.1:8010', repo)).contract('IpfsR
 ```
 // command for deploying the smart contract, generating a file named solar.development.json
 $ cd src
-$ solar deploy IpfsRecord.sol --qtum_rpc="http://atx:atx@127.0.0.1:13889/"
+$ solar deploy IpfsRecord.sol --htmlcoin_rpc="http://USER:PASSWORD@127.0.0.1:4889/"
 
 // configuration in file src/App.js
 import repo from './solar.development.json'
@@ -66,7 +66,7 @@ import repo from './solar.development.json'
       "txid": "b97a8a562b3fb6aeab9d4b023025182141092bb41dcb3955aecf27ffc82eb30d",
       "createdAt": "2018-11-15T10:31:23.43932943+08:00",
       "confirmed": true,
-      "sender": "qWE1ZZEs7yxoEGzdLVZnNqsmuLPSThi4d6",
+      "sender": "HWE1ZZEs7yxoEGzdLVZnNqsmuLPSThi4d6",
       "senderHex": "8aefb4b0ff32c65e9dc4d8036cd6cec0b4c7fe9f"
     }
   },
